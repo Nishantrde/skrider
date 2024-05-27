@@ -52,7 +52,6 @@
             <p>Description of Destination 2.</p>
             <button class="see-more">See More</button>
         </div>
-        <!-- Add more destinations as needed -->
     </div>
 </section>
 
@@ -67,6 +66,20 @@
         </ul>
     </div>
 </section>
+<div class="container">
+    <form action="review">
+        {% csrf_token %}
+<div class="destination">
+    <button class="see-more">Check Review</button>
+</div>
+</form>
+<div class="destination">
+    <form action="share_reviews">
+        {% csrf_token %}
+<button class="see-more">Share Reviews</button>
+</div>
+</form>
+</div>
 
 <footer id="contact">
     <div class="container">
