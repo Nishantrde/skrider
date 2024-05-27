@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sikkim Tourism</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Reset CSS */
         body, h1, h2, h3, p, ul, li, address {
@@ -11,23 +12,36 @@
             padding: 0;
         }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
+        /* Improved Typography */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
 
+        /* Container Styles */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
         header {
             background-color: #333;
             color: #fff;
             padding: 20px 0;
+            text-align: center;
         }
 
         header h1 {
-            font-size: 24px;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
 
         nav ul {
             list-style-type: none;
+            margin-top: 10px;
         }
 
         nav ul li {
@@ -38,25 +52,54 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Section Styles */
         section {
             padding: 50px 0;
         }
 
         h2 {
+            font-size: 28px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
+        /* Destination Styles */
         .destination {
             margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .destination img {
             width: 100%;
             height: auto;
+            display: block;
+            border-radius: 8px 8px 0 0;
         }
 
+        .destination h3 {
+            font-size: 24px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        .destination p {
+            padding: 20px;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Footer Styles */
         footer {
             background-color: #333;
             color: #fff;
@@ -66,6 +109,17 @@
 
         footer address {
             font-style: normal;
+            margin-top: 10px;
+        }
+
+        footer address a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer address a:hover {
+            color: #fff;
         }
     </style>
 </head>
@@ -127,8 +181,8 @@
         <h2>Contact Us</h2>
         <p>For inquiries and bookings, please contact us at:</p>
         <address>
-            Name : Dhiren
-            Email: info@sikkimtourism.com<br>
+            Name: Dhiren<br>
+            Email: <a href="mailto:info@sikkimtourism.com">info@sikkimtourism.com</a><br>
             Phone: +91 9999999999
         </address>
     </div>
@@ -136,4 +190,3 @@
 
 </body>
 </html>
-
