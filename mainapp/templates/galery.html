@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-<title>Sikkim Tourism</title>
+<title>Galery</title>
 {% endblock %}
     
 {% block style %}
@@ -13,40 +13,33 @@
 
 <header>
     <div class="container">
-        <h1>Sikkim Tourism</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Galery: Zigzcg road near Zuluk</h1>
+        
     </div>
 </header>
 
-<section id="about">
-    <div class="container">
-        <h2>About Sikkim</h2>
-        <p>Sikkim is a beautiful state in northeastern India, known for its breathtaking landscapes, rich culture, and adventure activities.</p>
-    </div>
-</section>
+
 
 <section id="destinations">
     <div class="container">
-        <h2>Popular Destinations</h2>
+        
         <div class="destination">
             {% load static %}
             <img src="{% static 'img/zigzac_road.jpeg' %}">
-            <h3>Zigzcg road near Zuluk</h3>
-            <p>The famous ZigZag road is just few kilometer away from Zuluk. One can easily spend and do excursion around the place for 2-3 days.</p>
         </div>
         <div class="destination">
-            <img src="destination2.jpg" alt="Destination 2">
-            <h3>Destination 2</h3>
-            <p>Description of Destination 2.</p>
+            {% load static %}
+            <img src="{% static 'img/road_zz2.jpeg' %}">
         </div>
-        <!-- Add more destinations as needed -->
+        <div class="destination">
+            {% load static %}
+            <img src="{% static 'img/zz3.jpeg' %}">
+        </div>
+        <div class="destination">
+            {% load static %}
+            <img src="{% static 'img/mt_zz.jpeg' %}">
+        </div>
+        
     </div>
 </section>
 
