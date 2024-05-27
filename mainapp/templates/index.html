@@ -34,17 +34,23 @@
 
 <section id="destinations">
     <div class="container">
+        
         <h2>Popular Destinations</h2>
         <div class="destination">
             {% load static %}
             <img src="{% static 'img/zigzac_road.jpeg' %}">
             <h3>Zigzcg road near Zuluk</h3>
             <p>The famous ZigZag road is just few kilometer away from Zuluk. One can easily spend and do excursion around the place for 2-3 days.</p>
+            <form action="/galery" method="post">
+                {% csrf_token %}
+            <button class="see-more">See More</button>
+            </form>
         </div>
         <div class="destination">
             <img src="destination2.jpg" alt="Destination 2">
             <h3>Destination 2</h3>
             <p>Description of Destination 2.</p>
+            <button class="see-more">See More</button>
         </div>
         <!-- Add more destinations as needed -->
     </div>
@@ -58,7 +64,6 @@
             <li>White-water Rafting</li>
             <li>Paragliding</li>
             <li>Yak Safari</li>
-            <!-- Add more activities as needed -->
         </ul>
     </div>
 </section>
