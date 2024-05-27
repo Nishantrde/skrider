@@ -128,3 +128,20 @@ footer address a:hover {
 .see-more:hover {
     background-color: #ffcc00;
 }
+
+.container form {
+    text-align: center;
+}
+.container form input[type="text"],
+.container form textarea {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto;
+}
+.container form button {
+    margin-top: 10px; /* Adjust spacing as needed */
+}
+/* Standardize font and spacing for the content */
+.container label, .container textarea {
+    display: block;
+    margin-top: 10px;
+}

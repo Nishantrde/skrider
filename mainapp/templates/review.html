@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Gallery</title>
+{% endblock %}
+    
+{% block style %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/sh_views.css' %}">
+
+{% endblock %}
+    
+{% block body %}
+<body>
+
+<header>
+    <div class="container">
+        <h1>Our Reviews</h1>
+    </div>
+</header>
+
+<section id="destinations">
+    <div class="container">
+        {% for review in reviews %}
+        <div class="destination">
+            <h1>{{ review.name }}</h1>
+            <p>{{ review.review }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+</body>
+{% endblock %}
