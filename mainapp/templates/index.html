@@ -50,10 +50,15 @@
             </form>
         </div>
         <div class="destination">
-            <img src="destination2.jpg" alt="Destination 2">
-            <h3>Destination 2</h3>
-            <p>Description of Destination 2.</p>
-            <button class="see-more">See More</button>
+            
+            <img src="{{photos2.image.url}}">
+            
+            <h3>{{photos2.category}}</h3>
+            <p>The sun setting behind the mountains, especially during the evening, makes the moment truly awesome</p>
+            <form action="/galery" method="post">
+                {% csrf_token %}
+            <button class="see-more" name="see" value="second">See More</button>
+            </form>
         </div>
     </div>
 </section>

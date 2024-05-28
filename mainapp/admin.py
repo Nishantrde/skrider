@@ -3,5 +3,5 @@ from .models import *
 
 admin.site.register(Reviews)
 admin.site.register(Galery)
-
+admin.site.register(Webcontent)
 
