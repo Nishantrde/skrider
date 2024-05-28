@@ -6,8 +6,10 @@ body, h1, h2, h3, p, ul, li, address {
 
 /* Improved Typography */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your desired Google Font */
     line-height: 1.6;
+    /* Add background gradient for mountains */
+    background: linear-gradient(to bottom, #e0e0e0 0%, #ffffff 100%);
 }
 
 /* Container Styles */
@@ -16,6 +18,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative; /* Add this line to make sure the mountains cover the entire page */
+    z-index: 1; /* Add this line to ensure the mountains stay behind the content */
 }
 
 /* Header Styles */
@@ -24,6 +28,8 @@ header {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    position: relative; /* Add this line */
+    z-index: 2; /* Add this line to ensure header stays on top of mountains */
 }
 
 header h1 {
@@ -132,14 +138,17 @@ footer address a:hover {
 .container form {
     text-align: center;
 }
+
 .container form input[type="text"],
 .container form textarea {
     width: 80%; /* Adjust width as needed */
     margin: 0 auto;
 }
+
 .container form button {
     margin-top: 10px; /* Adjust spacing as needed */
 }
+
 /* Standardize font and spacing for the content */
 .container label, .container textarea {
     display: block;

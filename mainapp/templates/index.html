@@ -28,7 +28,9 @@
 <section id="about">
     <div class="container">
         <h2>About Sikkim</h2>
+        <div class="destination">
         <p>Sikkim is a beautiful state in northeastern India, known for its breathtaking landscapes, rich culture, and adventure activities.</p>
+        </div>
     </div>
 </section>
 
@@ -39,7 +41,7 @@
         <div class="destination">
             {% load static %}
             <img src="{% static 'img/zigzac_road.jpeg' %}">
-            <h3>Zigzcg road near Zuluk</h3>
+            <h3>Zigzag road near Zuluk</h3>
             <p>The famous ZigZag road is just few kilometer away from Zuluk. One can easily spend and do excursion around the place for 2-3 days.</p>
             <form action="/galery" method="post">
                 {% csrf_token %}
@@ -59,10 +61,12 @@
     <div class="container">
         <h2>Activities</h2>
         <ul>
+            <div class="destination">
             <li>Trekking</li>
             <li>White-water Rafting</li>
             <li>Paragliding</li>
             <li>Yak Safari</li>
+            </div>
         </ul>
     </div>
 </section>
