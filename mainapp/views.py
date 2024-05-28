@@ -29,7 +29,8 @@ def share_reviews(request):
     if request.method == "POST":
         name = request.POST.get('name')
         review_text = request.POST.get("review")
-        review = Reviews(name=name, review=review_text)
+        ratting = int(request.POST.get("rating"))
+        review = Reviews(name=name, review=review_text, rating = ratting)
         review.save()
         return render(request, "share_reviews.html")
     return render(request, "share_reviews.html")

@@ -2,13 +2,13 @@
 {% block title %}
 <title>Gallery</title>
 {% endblock %}
-    
+
 {% block style %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/sh_views.css' %}">
 
 {% endblock %}
-    
+
 {% block body %}
 <body>
 
@@ -22,10 +22,24 @@
     <div class="container">
         <form action="share_reviews" method="post">
             {% csrf_token %}
+            <!-- Rest of the form elements -->
             <label for="name">Name</label>
             <input type="text" id="name" name="name">
             <label for="review">Review</label>
             <textarea id="review" name="review"></textarea>
+            <label for="review">Rate us</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1"></label>
+            </div><br>
             <button type="submit">Submit</button>
         </form>
     </div>
