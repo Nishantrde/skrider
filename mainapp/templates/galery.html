@@ -13,7 +13,7 @@
 
 <header>
     <div class="container">
-        <h1>Galery: ZigZag road near Zuluk</h1>
+        <h1>Galery: {{title}}</h1>
         
     </div>
 </header>
@@ -22,23 +22,12 @@
 
 <section id="destinations">
     <div class="container">
-        
+        {% for photo in photos %}
         <div class="destination">
-            {% load static %}
-            <img src="{% static 'img/zigzac_road.jpeg' %}">
+            
+            <img src="{{photo.image.url}}">
         </div>
-        <div class="destination">
-            {% load static %}
-            <img src="{% static 'img/road_zz2.jpeg' %}">
-        </div>
-        <div class="destination">
-            {% load static %}
-            <img src="{% static 'img/zz3.jpeg' %}">
-        </div>
-        <div class="destination">
-            {% load static %}
-            <img src="{% static 'img/mt_zz.jpeg' %}">
-        </div>
+        {% endfor %}
         
     </div>
 </section>

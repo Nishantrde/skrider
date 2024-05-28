@@ -2,11 +2,13 @@ from django.shortcuts import render
 from mainapp.models import *
 
 def index(request):
-    return render(request, "index.html")
+    photo = Galery.objects.filter(title = "zuluk zigzag roads")
+    return render(request, "index.html", {"pic":photo[0]})
 
 def galery(request):
     if request.method == "POST":
-        return render(request, "galery.html")
+        photos = Galery.objects.filter(category = "ZigZag road near Zuluk")
+        return render(request, "galery.html", {"photos":photos, 'title' : 'ZigZag road near Zuluk'})
     
 def reviews(request):
     if request.method == "GET":

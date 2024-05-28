@@ -13,7 +13,7 @@
 
 <header>
     <div class="container">
-        <h1>Sikkim Tourism</h1>
+        <h1>EXPLORE SIKKIM</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -39,9 +39,10 @@
         
         <h2>Popular Destinations</h2>
         <div class="destination">
-            {% load static %}
-            <img src="{% static 'img/zigzac_road.jpeg' %}">
-            <h3>Zigzag road near Zuluk</h3>
+            
+            <img src="{{pic.image.url}}">
+            
+            <h3>{{pic.category}}</h3>
             <p>The famous ZigZag road is just few kilometer away from Zuluk. One can easily spend and do excursion around the place for 2-3 days.</p>
             <form action="/galery" method="post">
                 {% csrf_token %}

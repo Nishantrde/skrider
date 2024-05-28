@@ -24,7 +24,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #333;
+    background-color: #3c2b2b;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -86,7 +86,7 @@ h2 {
 .destination h3 {
     font-size: 24px;
     padding: 20px;
-    background-color: #333;
+    background-color: #362828;
     color: #fff;
     margin: 0;
 }
@@ -121,7 +121,7 @@ footer address a:hover {
 }
 
 .see-more {
-    background-color: #333;
+    background-color: #362828;
     color: #ffffff; /* Text color */
     border: none;
     padding: 10px 20px;
