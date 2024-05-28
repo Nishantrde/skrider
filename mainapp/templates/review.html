@@ -6,7 +6,38 @@
 {% block style %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/sh_views.css' %}">
-
+<style>
+    /* Add custom styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+    h1 {
+        margin: 0;
+    }
+    #destinations {
+        padding: 50px 0;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .destination {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
 {% endblock %}
     
 {% block body %}
