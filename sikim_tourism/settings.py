@@ -39,10 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "django_google_sso",
     'django.contrib.staticfiles',
     'mainapp',
     'cloudinary',
 ]
+
+
+GOOGLE_SSO_CLIENT_ID = "973525346804-pof9hbqop0te4oe9hqgro59957etlpj4.apps.googleusercontent.com"
+GOOGLE_SSO_PROJECT_ID = "sikkimrider"
+GOOGLE_SSO_CLIENT_SECRET = "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"
+
+GOOGLE_SSO_ALLOWABLE_DOMAINS = ["gmail.com"]
+
+GOOGLE_SSO_NEXT_URL = 'main_app:reviews'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

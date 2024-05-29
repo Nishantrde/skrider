@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from mainapp.models import *
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 
 def index(request):
-    # titl
     photo = Galery.objects.filter(title = "zuluk zigzag roads")
     photos2 = Galery.objects.filter(category = "Sun set view from mountain view")
 
@@ -26,13 +27,21 @@ def reviews(request):
         return render(request, "review.html", {"reviews" : review})
 
 def share_reviews(request):
+    username = ""
+    if request.user:
+        username = request.user.username[:14]
+        login(request, request.user)
     if request.method == "POST":
         name = request.POST.get('name')
         review_text = request.POST.get("review")
         ratting = int(request.POST.get("rating"))
         review = Reviews(name=name, review=review_text, rating = ratting)
         review.save()
-        return render(request, "share_reviews.html")
-    return render(request, "share_reviews.html")
+        return render(request, "share_reviews.html", {"user":username})
+    return render(request, "share_reviews.html", {"username":username})
+
+def login_page(request):
+    return render(request, "login.html")
+
 
 

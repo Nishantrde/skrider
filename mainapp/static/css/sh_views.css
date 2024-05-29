@@ -1,39 +1,37 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li, address {
+    margin: 0;
+    padding: 0;
+}
+
+/* Improved Typography */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
 header {
-    background-color: #3c2b2b;
+    background-color: #3c2b2b; /* Updated header background color */
     color: #fff;
     padding: 20px 0;
     text-align: center;
 }
 
- /* Add custom styles */
- body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-h1 {
-    margin: 0;
-}
+/* Section Styles */
 #destinations {
     padding: 50px 0;
 }
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
+
+/* Destination Styles */
 .destination {
     background-color: #fff;
     padding: 20px;
@@ -48,42 +46,39 @@ h1 {
     direction: rtl;
     margin-right: 10px; /* Adjust spacing between rating and other form elements */
 }
+
 .rating > label {
     display: inline-block;
     padding: 0 1px;
     font-size: 25px;
 }
+
 .rating > label:before {
     content: "☆";
 }
+
 .rating > input[type="radio"] {
     display: none;
 }
+
 .rating > input[type="radio"]:checked ~ label:before {
     content: "★";
     color: gold;
 }
 
-h1 {
-    margin: 0;
-}
-#destinations {
-    padding: 50px 0;
-}
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
+/* Form Styles */
 form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 label {
     display: block;
     margin-bottom: 10px;
 }
+
 input[type="text"],
 textarea {
     width: 100%;
@@ -95,10 +90,12 @@ textarea {
     box-sizing: border-box;
     transition: background-color 0.3s ease;
 }
+
 input[type="text"]:focus,
 textarea:focus {
     background-color: #e0e0e0; /* Change color on focus */
 }
+
 button[type="submit"] {
     background-color: #333;
     color: #fff;
@@ -108,9 +105,7 @@ button[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 button[type="submit"]:hover {
     background-color: #555;
 }
-
-
-

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    
+{% endblock %}
+
+{% block body %}
+    <body>
+    <header>
+        <div class="container">
+            <h1>Login</h1>
+        </div>
+    </header>
+
+    <section id="destinations">
+        <div class="container">
+            <a href="/google_sso/login/" class="btn">Sign in with Google <i class="fab fa-google"></i></a>
+        </div>
+    </section>
+    </body>
+{% endblock %}
