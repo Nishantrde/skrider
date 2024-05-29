@@ -12,7 +12,7 @@ def galery(request):
     if request.method == "POST":
         if request.POST.get("see") == "second":
             photos = Galery.objects.filter(category = "Sun set view from mountain view")
-            title = "Sun set view from mountain view" 
+            title = "Sun rising from mountain view" 
         else:
             photos = Galery.objects.filter(category = "ZigZag road near Zuluk")
             title = "ZigZag road near Zuluk" 
