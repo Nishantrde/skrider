@@ -14,6 +14,9 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,10 +48,12 @@ INSTALLED_APPS = [
     'cloudinary',
 ]
 
+import os 
 
-GOOGLE_SSO_CLIENT_ID = "973525346804-pof9hbqop0te4oe9hqgro59957etlpj4.apps.googleusercontent.com"
+GOOGLE_SSO_CLIENT_ID = os.environ['GOOGLE_SSO_CLIENT_ID']
 GOOGLE_SSO_PROJECT_ID = "sikkimrider"
-GOOGLE_SSO_CLIENT_SECRET = "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"
+GOOGLE_SSO_CLIENT_SECRET = os.environ['GOOGLE_SSO_CLIENT_SECRET']
+
 
 GOOGLE_SSO_ALLOWABLE_DOMAINS = ["gmail.com"]
 
@@ -139,7 +144,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-import os 
+
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
