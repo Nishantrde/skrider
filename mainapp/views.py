@@ -30,7 +30,6 @@ def share_reviews(request):
     username = ""
     if request.user:
         username = request.user.username[:14]
-        login(request, request.user)
     if request.method == "POST":
         name = request.POST.get('name')
         review_text = request.POST.get("review")
