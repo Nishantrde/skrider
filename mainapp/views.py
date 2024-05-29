@@ -4,15 +4,15 @@ from mainapp.models import *
 
 def index(request):
     photo = Galery.objects.filter(title = "zuluk zigzag roads")
-    photos2 = Galery.objects.filter(category = "Sun set view from mountain view")
+    photos2 = Galery.objects.filter(category = "Sun rising from mountains")
 
     return render(request, "index.html", {"pic":photo[0], "photos2":photos2[1]})
 
 def galery(request):
     if request.method == "POST":
         if request.POST.get("see") == "second":
-            photos = Galery.objects.filter(category = "Sun set view from mountain view")
-            title = "Sun rising from mountain view" 
+            photos = Galery.objects.filter(category = "Sun rising from mountains")
+            title = "Sun rising from mountains" 
         else:
             photos = Galery.objects.filter(category = "ZigZag road near Zuluk")
             title = "ZigZag road near Zuluk" 
