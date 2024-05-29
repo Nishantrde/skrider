@@ -6,7 +6,6 @@
 {% block style %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
 {% endblock %}
     
 {% block body %}
@@ -28,7 +27,7 @@
 
 <section id="about">
     <div class="container">
-        <h2>About Sikkim</h2>
+        <h3>About Sikkim</h3    >
         <div class="destination">
             <p>Sikkim is a beautiful state in northeastern India, known for its breathtaking landscapes, rich culture, and adventure activities.</p>
         </div>
@@ -37,7 +36,7 @@
 
 <section id="destinations">
     <div class="container">
-        <h2>Popular Destinations</h2>
+        <h3>Popular Destinations</h3>
         <div class="destination">
             <img src="{{pic.image.url}}">
             <h3>{{pic.category}}</h3>
@@ -100,6 +99,18 @@
     </div>
 </footer>
 <script src="{% static 'js/index.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const aboutSection = document.querySelector('#about');
+  const destinationsSection = document.querySelector('#destinations');
+
+  // Add fade-in class to about and destinations sections after a delay
+  setTimeout(function() {
+    aboutSection.classList.add('fade-in');
+    destinationsSection.classList.add('fade-in');
+  }, 500); // Adjust delay as needed
+});
+</script>
 
 </body>
 {% endblock %}
