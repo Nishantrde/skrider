@@ -68,6 +68,12 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 /* Destination Styles */
 .destination {
     margin-bottom: 30px;
@@ -234,7 +240,17 @@ h2 {
 h2.fade-in {
   opacity: 1;
 }
-
+/* Add auto-transition animation for "About Sikkim" and "Popular Destinations" sections */
+#about, #destinations {
+    transition: all 0.5s ease-in-out;
+    opacity: 0; /* Start with opacity 0 so the sections fade in */
+  }
+  
+  /* Apply animation only when class is added */
+  #about.fade-in, #destinations.fade-in {
+    opacity: 1;
+  }
+  
 
 
 
