@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from mainapp.models import *
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
+
 
 def index(request):
     photo = Galery.objects.filter(title = "zuluk zigzag roads")
@@ -12,7 +11,7 @@ def index(request):
 def galery(request):
     if request.method == "POST":
         if request.POST.get("see") == "second":
-            photos = Galery.objects.filter(category = "Sun set view from mountain view")
+            photos = Galery.objects.filter(category = "Sun rise view from mountain view")
             title = "Sun set view from mountain view" 
         else:
             photos = Galery.objects.filter(category = "ZigZag road near Zuluk")
