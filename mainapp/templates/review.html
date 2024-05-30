@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-<title>Ratting</title>
+<title>Ratings</title>
 {% endblock %}
     
 {% block style %}
@@ -22,15 +22,17 @@
         {% for review in reviews %}
         <div class="destination">
             <h1>{{ review.name }}</h1>
-            <p>{{ review.review }}</p>
             <div class="rating" data-rating="{{ review.rating }}"></div>
+            {% if review.image %}
+            <img src="{{ review.image.url }}" alt="Review Image">
+            {% endif %}
+            <p>{{ review.review }}</p>
         </div>
         {% endfor %}
     </div>
 </section>
 
 <script src="{% static 'js/review.js' %}"></script>
-
 
 </body>
 {% endblock %}

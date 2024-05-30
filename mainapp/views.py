@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from mainapp.models import *
 
 
@@ -33,7 +33,9 @@ def share_reviews(request):
         name = request.POST.get('name')
         review_text = request.POST.get("review")
         ratting = int(request.POST.get("rating"))
-        review = Reviews(name=name, review=review_text, rating = ratting)
+        r_image = request.FILES.get('image')
+        print(r_image)
+        review = Reviews(name=name, review=review_text, rating = ratting, image = r_image)
         review.save()
         return render(request, "share_reviews.html", {"user":username})
     return render(request, "share_reviews.html", {"username":username})

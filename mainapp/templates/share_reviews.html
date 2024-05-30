@@ -19,7 +19,8 @@
 
 <section id="destinations">
     <div class="container">
-        <form action="share_reviews" method="post">
+        <form action="share_reviews" method="post" enctype="multipart/form-data">
+
             {% csrf_token %}
             <!-- Rest of the form elements -->
             <label for="name">Name</label>
@@ -39,6 +40,11 @@
                 <input type="radio" id="star1" name="rating" value="1">
                 <label for="star1"></label>
             </div><br>
+
+            <input type="file" name="image" id="image-upload" accept="image/*" onchange="previewImage(event)">
+            <label for="image-upload" class="custom-file-upload">Share some memories</label><br>
+            <img id="image-preview" src="#" alt="Preview" style="display: none; max-width: 300px; margin-top: 10px;"><br>
+            
             <button type="submit">Submit</button>
         </form>
 
@@ -46,6 +52,8 @@
         <a href="/" class="redirect-button">Go to Home page</a>
     </div>
 </section>
+<script src="{% static 'js/sh_review.js' %}"></script>
+
 
 </body>
 {% endblock %}
