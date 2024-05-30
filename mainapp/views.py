@@ -13,14 +13,11 @@ def index(request):
 
 def galery(request):
     if request.method == "POST":
-        if request.POST.get("see") == "second":
-            photos = Galery.objects.filter(category = "Sun rising from mountains")
+        if request.POST.get("galery"):
+            content = str(request.POST.get("galery"))
+            photos = Galery.objects.filter(category = content)
             title = "Sun rising from mountains" 
-        else:
-            photos = Galery.objects.filter(category = "ZigZag road near Zuluk")
-            title = "ZigZag road near Zuluk" 
-
-        return render(request, "galery.html", {"photos":photos, 'title' : title})
+            return render(request, "galery.html", {"photos":photos, 'title' : title})
     
 def reviews(request):
     if request.method == "GET":

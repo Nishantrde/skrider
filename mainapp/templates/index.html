@@ -41,9 +41,10 @@
         <div class="destination">
             <img src="{{photo.image.url}}">
             <h3>{{photo.category}}</h3>
-            <p>The famous ZigZag road is just a few kilometers away from Zuluk. One can easily spend and do excursions around the place for 2-3 days.</p>
+            <p>{{photo.description}}</p>
             <form action="/galery" method="post">
                 {% csrf_token %}
+                <input type="hidden" name="galery" value="{{photo.category}}">
                 <button class="see-more">See More</button>
             </form>
         </div>
