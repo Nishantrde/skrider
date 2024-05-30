@@ -1,12 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from mainapp.models import *
 
 
 def index(request):
-    photo = Galery.objects.filter(title = "zuluk zigzag roads")
-    photos2 = Galery.objects.filter(category = "Sun rising from mountains")
-
-    return render(request, "index.html", {"pic":photo[0], "photos2":photos2[1]})
+    headings = Webcontent.objects.all()
+    photos = []
+    for heading in headings:
+        print(heading)
+        photos.append(Galery.objects.filter(title = str(heading))[0])
+    print(photos[0])
+    return render(request, "index.html", {"photos": photos})
 
 def galery(request):
     if request.method == "POST":
@@ -43,5 +46,6 @@ def share_reviews(request):
 def login_page(request):
     return render(request, "login.html")
 
-
+def admin_control(request):
+    return render(request, "admin_control.html")
 

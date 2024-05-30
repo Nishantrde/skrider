@@ -37,24 +37,18 @@
 <section id="destinations">
     <div class="container">
         <h3>Popular Destinations</h3>
+        {% for photo in photos %}
         <div class="destination">
-            <img src="{{pic.image.url}}">
-            <h3>{{pic.category}}</h3>
+            <img src="{{photo.image.url}}">
+            <h3>{{photo.category}}</h3>
             <p>The famous ZigZag road is just a few kilometers away from Zuluk. One can easily spend and do excursions around the place for 2-3 days.</p>
             <form action="/galery" method="post">
                 {% csrf_token %}
                 <button class="see-more">See More</button>
             </form>
         </div>
-        <div class="destination">
-            <img src="{{photos2.image.url}}">
-            <h3>{{photos2.category}}</h3>
-            <p>The sun rising behind the mountains, especially during the evening, makes the moment truly awesome.</p>
-            <form action="/galery" method="post">
-                {% csrf_token %}
-                <button class="see-more" name="see" value="second">See More</button>
-            </form>
-        </div>
+        {% endfor %}
+        
     </div>
 </section>
 
