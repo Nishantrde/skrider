@@ -43,22 +43,25 @@ def login_page(request):
     return render(request, "login.html")
 
 def admin_control(request):
-    
     if request.method == "POST":
         if request.POST.get("add_category"):
             admin_category = request.POST.get("add_category")
             admin_description = request.POST.get("description")
             obj1 = Webcontent(heading = admin_category, description = admin_description)
-            obj2 = Galery(title = admin_category, category = admin_category)
+            obj2 = Galery(title = admin_category, category = admin_category, description = admin_description)
             obj1.save()
             obj2.save()
 
         if request.POST.get("category"):
-            print(request.POST.get("category"))
             admin_title = request.POST.get("category")
             admin_image = request.FILES.get('image')
+            obj1 = Webcontent.objects.filter(heading = admin_title)
             Galery.objects.filter(image=None).delete()
-            obj = Galery(title = admin_title, category = admin_title, image = admin_image)
+            if obj1:
+                des = obj1[0].description
+            else:
+                des = ""
+            obj = Galery(title = admin_title, category = admin_title, image = admin_image, description = des)
             obj.save()
 
     headings = Webcontent.objects.all()
