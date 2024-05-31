@@ -34,7 +34,6 @@ def share_reviews(request):
         review_text = request.POST.get("review")
         ratting = int(request.POST.get("rating"))
         r_image = request.FILES.get('image')
-        print(r_image)
         review = Reviews(name=name, review=review_text, rating = ratting, image = r_image)
         review.save()
         return render(request, "share_reviews.html", {"user":username})
@@ -44,5 +43,27 @@ def login_page(request):
     return render(request, "login.html")
 
 def admin_control(request):
-    return render(request, "admin_control.html")
+    
+    if request.method == "POST":
+        if request.POST.get("add_category"):
+            admin_category = request.POST.get("add_category")
+            admin_description = request.POST.get("description")
+            obj1 = Webcontent(heading = admin_category, description = admin_description)
+            obj2 = Galery(title = admin_category, category = admin_category)
+            obj1.save()
+            obj2.save()
+
+        if request.POST.get("category"):
+            print(request.POST.get("category"))
+            admin_title = request.POST.get("category")
+            admin_image = request.FILES.get('image')
+            Galery.objects.filter(image=None).delete()
+            obj = Galery(title = admin_title, category = admin_title, image = admin_image)
+            obj.save()
+
+    headings = Webcontent.objects.all()
+    photos = []
+    for heading in headings:
+        photos.append(Galery.objects.filter(title = str(heading))[0])
+    return render(request, "admin_control.html", {"photos": photos})
 

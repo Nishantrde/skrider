@@ -12,7 +12,7 @@ class Reviews(models.Model):
 class Galery(models.Model):
     title = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image', null=True, blank=True)
     description = models.CharField(max_length=200, null=True, blank=True)
     def __str__(self):
         return self.title

@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Sikkim Tourism</title>
+{% endblock %}
+    
+{% block style %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+    
+{% block body %}
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="typewriter">EXPLORE SIKKIM</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="about">
+    <div class="container">
+        <h3>About Sikkim</h3    >
+        <div class="destination">
+            <p>Sikkim is a beautiful state in northeastern India, known for its breathtaking landscapes, rich culture, and adventure activities.</p>
+        </div>
+    </div>
+</section>
+
+<section id="destinations">
+    <div class="container">
+        <h3>Popular Destinations</h3>
+        {% for photo in photos %}
+        <div class="destination">
+            <img src="{{photo.image.url}}">
+            <h3>{{photo.category}}</h3>
+            <p>{{photo.description}}</p>
+            <form action="/galery" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="galery" value="{{photo.category}}">
+                <button class="see-more">See More</button><br><br>
+            </form>
+            <form action="/cp120" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="category" value="{{photo.category}}">
+                <input type="file" name="image" id="image-upload" accept="image/*" onchange="previewImage(event)">
+                <img id="image-preview" src="#" alt="Preview" style="display: none; max-width: 300px; margin-top: 10px;"><br>
+                <button class="see-more">Add photos in this category</button>
+            </form>
+        </div>
+        {% endfor %}
+        
+    </div>
+    <!-- <form action="" method="post">
+        <section id="destination">
+            <div class="destination">
+                {% csrf_token %}
+                <h4>Category name: <input type="text" name="add_category"></h4><br>
+                <h4>Description: <input type="text" name="description"></h4><br>
+                <button class="see-more">Add More Category</button>
+            </div>
+        </section>
+        
+    </form> -->
+
+</section>
+
+<section id="activities">
+    <div class="container">
+        <h2>Activities</h2>
+        <ul>
+            <div class="destination">
+                <li>Trekking</li>
+                <li>White-water Rafting</li>
+                <li>Paragliding</li>
+                <li>Yak Safari</li>
+            </div>
+        </ul>
+    </div>
+</section>
+
+<div class="container" style="text-align: center;"> <!-- Center the content -->
+    <form action="review">
+        {% csrf_token %}
+        <div class="destination small-box">
+            <button class="see-more">Check Review</button>
+        </div>
+    </form>
+    <form action="login">
+        {% csrf_token %}
+        <div class="destination small-box">
+            <button class="see-more">Share Reviews</button>
+        </div>
+    </form>
+</div>
+
+<footer id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>For inquiries and bookings, please contact us at:</p>
+        <address>
+            Name: Dhiren<br>
+            Email: <a href="mailto:raidhiran07@gmail.com">raidhiran07@gmail.com</a><br>
+            Phone: +91 8372032547
+        </address>
+    </div>
+</footer>
+<script src="{% static 'js/index.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const aboutSection = document.querySelector('#about');
+  const destinationsSection = document.querySelector('#destinations');
+
+  // Add fade-in class to about and destinations sections after a delay
+  setTimeout(function() {
+    aboutSection.classList.add('fade-in');
+    destinationsSection.classList.add('fade-in');
+  }, 500); // Adjust delay as needed
+});
+</script>
+
+</body>
+{% endblock %}
