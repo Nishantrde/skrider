@@ -67,7 +67,7 @@
                 <input type="file" name="image" id="image-upload-{{ forloop.counter }}" accept="image/*" onchange="previewImage('image-upload-{{ forloop.counter }}', 'image-preview-{{ forloop.counter }}')">
                 <img id="image-preview-{{ forloop.counter }}" src="#" alt="Preview" style="display: none; max-width: 300px; margin-top: 10px;"><br>
 
-                <button class="see-more">Add photos in this category</button>
+                    <button class="see-more">Add photos in this Galery</button>
             </form>
         </div>
         {% endfor %}
@@ -77,9 +77,9 @@
         <section id="destination">
             <div class="destination">
                 {% csrf_token %}
-                <h4>Category name: <input type="text" name="add_category"></h4><br>
+                <h4>Galery name: <input type="text" name="add_category"></h4><br>
                 <h4>Description: <input type="text" name="description"></h4><br>
-                <button class="see-more">Add More Category</button>
+                <button class="see-more">Add More Galery</button>
             </div>
         </section>
         
