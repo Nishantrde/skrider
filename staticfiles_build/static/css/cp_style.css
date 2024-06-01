@@ -1,0 +1,202 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li, address {
+    margin: 0;
+    padding: 0;
+}
+
+/* Improved Typography */
+body {
+    font-family: 'Roboto', sans-serif; /* Change 'Roboto' to your desired Google Font */
+    line-height: 1.6;
+    /* Add background gradient for mountains */
+    background: linear-gradient(to bottom, #e0e0e0 0%, #ffffff 100%);
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Add this line to make sure the mountains cover the entire page */
+    z-index: 1; /* Add this line to ensure the mountains stay behind the content */
+}
+
+/* Header Styles */
+header {
+    background-color: #3c2b2b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Add this line */
+    z-index: 2; /* Add this line to ensure header stays on top of mountains */
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 0;
+    transition: all 0.5s ease-in-out;
+    opacity: 0; /* Start with opacity 0 so the sections fade in */
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    opacity: 0; /* Start with opacity 0 so the header fades in */
+}
+
+/* Destination Styles */
+.destination {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Add custom CSS for smaller boxes */
+.small-box {
+    width: 150px; /* Adjust the width as needed */
+    height: 60px; /* Adjust the height as needed */
+    padding: 10px; /* Adjust the padding as needed */
+    border: 1px solid #ccc; /* Add border for better visibility */
+    margin-bottom: 20px; /* Adjust the margin bottom as needed */
+    margin-right: 20px; /* Adjust the margin right as needed */
+    display: inline-block; /* Display boxes in a row */
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); /* Add shadow */
+}
+/* Center text in the small boxes */
+.small-box button {
+    display: block;
+    margin: 0 auto;
+}
+
+.destination img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.destination h3 {
+    font-size: 24px;
+    padding: 20px;
+    background-color: #362828;
+    color: #fff;
+    margin: 0;
+}
+
+.destination p {
+    padding: 20px;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer address {
+    font-style: normal;
+    margin-top: 10px;
+}
+
+footer address a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer address a:hover {
+    color: #fff;
+}
+
+.see-more {
+    background-color: #362828;
+    color: #ffffff; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.see-more:hover {
+    background-color: #ffcc00;
+}
+
+.container form {
+    text-align: center;
+}
+
+.container form input[type="text"],
+.container form textarea {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+.container form button {
+    margin-top: 10px; /* Adjust spacing as needed */
+}
+
+/* Standardize font and spacing for the content */
+.container label, .container textarea {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Typing animation */
+.typewriter {
+    overflow: hidden; /* Ensures the text is not revealed until the animation */
+    border-right: .15em solid orange; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor blinking effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
