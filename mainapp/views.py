@@ -68,15 +68,12 @@ def admin_control(request):
             obj = Contacts.objects.first()
             if request.POST.get("name") != "":
                 name = request.POST.get("name")
-                print(name)
                 obj.name = name
             if request.POST.get("email") != "":
                 email = request.POST.get("email")
-                print(email)
                 obj.email = email
             if request.POST.get("Ph_no.") != "":
                 phn = request.POST.get("Ph_no.")
-                print(phn)
                 obj.phone_number = phn   
             obj.save()
 
