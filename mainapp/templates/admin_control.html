@@ -61,7 +61,7 @@
         {% endfor %}
         
     </div>
-    <form action="" method="post">
+    <form action="cp120" method="post">
         <section id="destination">
             <div class="destination">
                 {% csrf_token %}
@@ -103,10 +103,10 @@
         </div>
     </form>
 </div>
-<form action="" method="post">
+<form action="cp120" method="post">
 <div class="destination">
     {% csrf_token %}
-    <input type="hidden" name="admin_add" value="">
+    <input type="hidden" name="admin_add" value="cgds">
     <h4>Name: <input type="text" name="name"></h4><br>
     <h4>Email: <input type="text" name="email"></h4><br>
     <h4>Ph no.: <input type="text" name="Ph_no."></h4><br>

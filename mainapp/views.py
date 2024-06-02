@@ -65,13 +65,20 @@ def admin_control(request):
             obj.save()
         
         if request.POST.get("admin_add"):
-            name = request.POST.get("name")
-            email = request.POST.get("email")
-            phn = request.POST.get("Ph_no.")
             obj = Contacts.objects.first()
-            obj.name = name
-            obj.email = email
-            obj.phone_number = phn
+            if request.POST.get("name") != "":
+                name = request.POST.get("name")
+                print(name)
+                obj.name = name
+            if request.POST.get("email") != "":
+                email = request.POST.get("email")
+                print(email)
+                obj.email = email
+            if request.POST.get("Ph_no.") != "":
+                phn = request.POST.get("Ph_no.")
+                print(phn)
+                obj.phone_number = phn   
+            obj.save()
 
 
     headings = Webcontent.objects.all()
