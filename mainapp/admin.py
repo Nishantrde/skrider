@@ -4,4 +4,5 @@ from .models import *
 admin.site.register(Reviews)
 admin.site.register(Galery)
 admin.site.register(Webcontent)
+admin.site.register(Sudo_admin_user)
 
