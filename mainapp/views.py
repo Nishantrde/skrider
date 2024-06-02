@@ -16,8 +16,7 @@ def galery(request):
         if request.POST.get("galery"):
             content = str(request.POST.get("galery"))
             photos = Galery.objects.filter(category = content)
-            title = "Sun rising from mountains" 
-            return render(request, "galery.html", {"photos":photos, 'title' : title})
+            return render(request, "galery.html", {"photos":photos, 'title' : photos[0].category})
     
 def reviews(request):
     if request.method == "GET":
