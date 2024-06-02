@@ -17,7 +17,7 @@ class Galery(models.Model):
     def __str__(self):
         return self.title
 
-class Sudo_admin_user(models.Model):
+class Contacts(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=12)

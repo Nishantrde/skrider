@@ -7,21 +7,9 @@
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <script>
-        function previewImage(inputId, previewId) {
-            var input = document.getElementById(inputId);
-            var imagePreview = document.getElementById(previewId);
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sh_views.css' %}">
 
-            var reader = new FileReader();
-            
-            reader.onload = function(){
-                console.log("previewing....")
-                imagePreview.src = reader.result;
-                imagePreview.style.display = 'block';
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    </script>
+    <script src="{% static 'js/ad_pic_preview.js' %}"></script>
 </head>
 <body>
 
@@ -115,22 +103,32 @@
         </div>
     </form>
 </div>
-
+<form action="" method="post">
+<div class="destination">
+    {% csrf_token %}
+    <input type="hidden" name="admin_add" value="">
+    <h4>Name: <input type="text" name="name"></h4><br>
+    <h4>Email: <input type="text" name="email"></h4><br>
+    <h4>Ph no.: <input type="text" name="Ph_no."></h4><br>
+    <button class="see-more">Change contacts</button>
+</div>
+</form> 
 <footer id="contact">
     <div class="container">
         <h2>Contact Us</h2>
         <p>For inquiries and bookings, please contact us at:</p>
         <address>
-            Name: Dhiren<br>
-            Email: <a href="mailto:raidhiran07@gmail.com">raidhiran07@gmail.com</a><br>
-            Phone: +91 8372032547
+            Name: {{name}}<br>
+            Email: <a href="mailto:raidhiran07@gmail.com">{{email}}</a><br>
+            Phone: +91 {{phn}}
         </address>
+        
     </div>
+    
 </footer>
 
 <script src="{% static 'js/index.js' %}"></script>
 <script src="{% static 'js/fadein.js' %}"></script>
-<!-- <script src="{% static 'js/sh_review.js' %}"></script> -->
 
 </body>
 </html>

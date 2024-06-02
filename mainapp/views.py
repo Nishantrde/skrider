@@ -63,10 +63,24 @@ def admin_control(request):
                 des = ""
             obj = Galery(title = admin_title, category = admin_title, image = admin_image, description = des)
             obj.save()
+        
+        if request.POST.get("admin_add"):
+            name = request.POST.get("name")
+            email = request.POST.get("email")
+            phn = request.POST.get("Ph_no.")
+            obj = Contacts.objects.first()
+            obj.name = name
+            obj.email = email
+            obj.phone_number = phn
+
 
     headings = Webcontent.objects.all()
     photos = []
     for heading in headings:
         photos.append(Galery.objects.filter(title = str(heading))[0])
-    return render(request, "admin_control.html", {"photos": photos})
+        obj = Contacts.objects.first()
+        name = obj.name
+        email = obj.email
+        phn = obj.phone_number
+    return render(request, "admin_control.html", {"photos": photos, "name":name, "email":email, "phn":phn})
 
