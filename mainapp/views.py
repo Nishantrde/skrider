@@ -44,10 +44,11 @@ def login_page(request):
 def admin_control(request):
     if request.method == "POST":
         if request.POST.get("add_category"):
+            admin_add_locations = request.POST.get("add_locations")
             admin_category = request.POST.get("add_category")
             admin_description = request.POST.get("description")
-            obj1 = Webcontent(heading = admin_category, description = admin_description)
-            obj2 = Galery(title = admin_category, category = admin_category, description = admin_description)
+            obj1 = Webcontent(heading = admin_category, description = admin_description, iframe = admin_add_locations)
+            obj2 = Galery(title = admin_category, category = admin_category, description = admin_description, iframe = admin_add_locations)
             obj1.save()
             obj2.save()
 

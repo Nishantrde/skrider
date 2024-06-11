@@ -14,6 +14,7 @@ class Galery(models.Model):
     category = models.CharField(max_length=100)
     image = CloudinaryField('image', null=True, blank=True)
     description = models.CharField(max_length=200, null=True, blank=True)
+    iframe = models.CharField(null=True, blank=True)
     def __str__(self):
         return self.title
 
@@ -25,6 +26,8 @@ class Contacts(models.Model):
 class Webcontent(models.Model):
     heading = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
+    iframe = models.CharField(null=True, blank=True)
+
     def __str__(self):
         return self.heading
 

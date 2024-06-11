@@ -47,9 +47,13 @@
                 <input type="hidden" name="galery" value="{{photo.category}}">
                 <button class="see-more">See More</button>
             </form>
+            
         </div>
+
+        {{photo.iframe | safe}}
+
         {% endfor %}
-        
+        <br><br>
     </div>
 </section>
 
