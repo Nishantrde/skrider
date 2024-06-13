@@ -60,9 +60,12 @@ def admin_control(request):
             Galery.objects.filter(image=None).delete()
             if obj1:
                 des = obj1[0].description
+                ifrm = obj1[0].iframe
             else:
                 des = ""
-            obj = Galery(title = admin_title, category = admin_title, image = admin_image, description = des)
+                ifrm = obj1[0].iframe
+            obj = Galery(title = admin_title, category = admin_title, image = admin_image, description = des, iframe = ifrm)
+            print(obj)
             obj.save()
         
         if request.POST.get("admin_add"):
