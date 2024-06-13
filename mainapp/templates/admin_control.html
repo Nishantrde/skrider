@@ -10,6 +10,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/sh_views.css' %}">
 
     <script src="{% static 'js/ad_pic_preview.js' %}"></script>
+    <script>
+        function confirmDelete() {
+            return confirm('Are you sure you want to delete all reviews?');
+        }
+    </script>
 </head>
 <body>
 
@@ -54,12 +59,10 @@
                 <input type="hidden" name="category" value="{{photo.category}}">
                 <input type="file" name="image" id="image-upload-{{ forloop.counter }}" accept="image/*" onchange="previewImage('image-upload-{{ forloop.counter }}', 'image-preview-{{ forloop.counter }}')">
                 <img id="image-preview-{{ forloop.counter }}" src="#" alt="Preview" style="display: none; max-width: 300px; margin-top: 10px;"><br>
-
-                    <button class="see-more">Add photos in this Galery</button>
+                <button class="see-more">Add photos in this Galery</button>
             </form>
         </div>
         {% endfor %}
-        
     </div>
     <form action="cp120" method="post">
         <section id="destination">
@@ -71,9 +74,7 @@
                 <button class="see-more">Add More Galery</button>
             </div>
         </section>
-        
     </form>
-
 </section>
 
 <section id="activities">
@@ -90,11 +91,18 @@
     </div>
 </section>
 
-<div class="container" style="text-align: center;"> <!-- Center the content -->
+<div class="container" style="text-align: center;">
     <form action="review">
         {% csrf_token %}
         <div class="destination small-box">
-            <button class="see-more">Check Review</button>
+            <button class="see-more">Check Reviews</button>
+        </div>
+    </form>
+    <form action="cp120" method="post" onsubmit="return confirmDelete();">
+        {% csrf_token %}
+        <div class="destination small-box">
+            <input type="hidden" name="del_rev" value="something">
+            <button class="see-more">Delete all Reviews</button>
         </div>
     </form>
     <form action="login">
@@ -104,6 +112,7 @@
         </div>
     </form>
 </div>
+
 <form action="cp120" method="post">
 <div class="destination">
     {% csrf_token %}
@@ -114,6 +123,7 @@
     <button class="see-more">Change contacts</button>
 </div>
 </form> 
+
 <footer id="contact">
     <div class="container">
         <h2>Contact Us</h2>
@@ -123,9 +133,7 @@
             Email: <a href="mailto:raidhiran07@gmail.com">{{email}}</a><br>
             Phone: +91 {{phn}}
         </address>
-        
     </div>
-    
 </footer>
 
 <script src="{% static 'js/index.js' %}"></script>

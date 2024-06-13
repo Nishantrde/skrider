@@ -43,6 +43,7 @@ def login_page(request):
 
 def admin_control(request):
     if request.method == "POST":
+        print(request.POST)
         if request.POST.get("add_category"):
             admin_add_locations = request.POST.get("add_locations")
             admin_category = request.POST.get("add_category")
@@ -76,6 +77,10 @@ def admin_control(request):
                 phn = request.POST.get("Ph_no.")
                 obj.phone_number = phn   
             obj.save()
+
+        if request.POST.get("del_rev"):
+            print("here")
+            obj = Reviews.objects.all().delete()
 
 
     headings = Webcontent.objects.all()
