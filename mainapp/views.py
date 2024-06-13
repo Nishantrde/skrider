@@ -36,8 +36,6 @@ def share_reviews(request):
         return render(request, "share_reviews.html", {"user":username})
     return render(request, "share_reviews.html", {"username":username})
 
-def login_page(request):
-    return render(request, "login.html")
 
 def admin_control(request):
     if request.method == "POST":
