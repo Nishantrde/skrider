@@ -27,6 +27,11 @@
             <img src="{{ review.image.url }}" alt="Review Image">
             {% endif %}
             <p>{{ review.review }}</p>
+
+            {% block button %}
+
+            {% endblock %}
+            
         </div>
         {% endfor %}
     </div>

@@ -92,8 +92,9 @@
 </section>
 
 <div class="container" style="text-align: center;">
-    <form action="review">
+    <form action="cp120" method="post">
         {% csrf_token %}
+        <input type="hidden" name="crt_rev" value="something">
         <div class="destination small-box">
             <button class="see-more">Check Reviews</button>
         </div>
@@ -101,7 +102,7 @@
     <form action="cp120" method="post" onsubmit="return confirmDelete();">
         {% csrf_token %}
         <div class="destination small-box">
-            <input type="hidden" name="del_rev" value="something">
+            <input type="hidden" name="del_revs" value="something">
             <button class="see-more">Delete all Reviews</button>
         </div>
     </form>

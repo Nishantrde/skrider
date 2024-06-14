@@ -1,0 +1,10 @@
+{% extends "review.html" %}
+
+{% block button %}
+<form action="cp120" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="del_rev" value="{{ review.review }}">
+    <button type="submit" class="see-more">Delete</button>
+</form>
+{% endblock %}
+

@@ -79,9 +79,17 @@ def admin_control(request):
                 obj.phone_number = phn   
             obj.save()
 
+        if request.POST.get("crt_rev"):
+            review = Reviews.objects.all()
+            return render(request, "ctr_review.html", {"reviews" : review})
+
         if request.POST.get("del_rev"):
-            print("here")
-            obj = Reviews.objects.all().delete()
+            Reviews.objects.filter(review = str(request.POST.get("del_rev"))).delete()
+            review = Reviews.objects.all()
+            return render(request, "ctr_review.html", {"reviews" : review})
+
+        if request.POST.get("del_revs"):
+            obj = Reviews.objects.all().delete()        
 
 
     headings = Webcontent.objects.all()
