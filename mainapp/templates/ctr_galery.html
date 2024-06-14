@@ -1,0 +1,15 @@
+{% extends "galery.html" %}
+
+{% block button %}
+<form action="cp120" method="post" onsubmit="return confirmDelete();">
+    {% csrf_token %}
+    <input type="hidden" name="galery" value="{{ photo.category }}">
+    <input type="hidden" name="del_photo" value="{{ photo.id }}">
+    <button type="submit" class="see-more">Delete</button>
+</form>
+{% endblock %}
+{% block red %}
+<a href="/cp120">Go to Control panel</a><br> <br>
+{% endblock %}
+
+

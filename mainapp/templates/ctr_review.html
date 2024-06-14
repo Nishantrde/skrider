@@ -1,10 +1,13 @@
 {% extends "review.html" %}
 
 {% block button %}
-<form action="cp120" method="post">
+<form action="cp120" method="post" onsubmit="return confirmDelete();">
     {% csrf_token %}
     <input type="hidden" name="del_rev" value="{{ review.review }}">
     <button type="submit" class="see-more">Delete</button>
 </form>
+{% endblock %}
+{% block red %}
+<a href="/cp120">Go to Control Panel</a><br><br>
 {% endblock %}
 

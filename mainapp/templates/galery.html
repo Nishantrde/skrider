@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-<title>Galery</title>
+<title>Gallery</title>
 {% endblock %}
     
 {% block style %}
@@ -13,25 +13,35 @@
 
 <header>
     <div class="container">
-        <h1>Galery: {{title}}</h1>
-        
+        <h1>Gallery: {{title}}</h1>
     </div>
 </header>
-
-
 
 <section id="destinations">
     <div class="container">
         {% for photo in photos %}
         <div class="destination">
-            
             <img src="{{photo.image.url}}">
+            {% block button %}
+            <form action="cp120" method="post" onsubmit="return confirmDelete()">
+                {% csrf_token %}
+                <input type="hidden" name="galery" value="{{ photo.category }}">
+                <input type="hidden" name="del_photo" value="{{ photo.id }}">
+                <button type="submit" class="see-more">Delete</button>
+            </form>
+            {% endblock %}
         </div>
         {% endfor %}
-        
     </div>
 </section>
 
-
+<script>
+function confirmDelete() {
+    return confirm('Are you sure you want to delete this photo?');
+}
+</script>
+{% block red %}
+{% endblock %}
+<a href="/">Go to Home</a>
 </body>
 {% endblock %}

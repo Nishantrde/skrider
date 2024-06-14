@@ -49,8 +49,9 @@
             <img src="{{photo.image.url}}">
             <h3>{{photo.category}}</h3>
             <p>{{photo.description}}</p>
-            <form action="/galery" method="post">
+            <form action="/cp120" method="post">
                 {% csrf_token %}
+                <input type="hidden" name="ctr_photo" value="{{ photo.id }}">
                 <input type="hidden" name="galery" value="{{photo.category}}">
                 <button class="see-more">See More</button><br><br>
             </form>

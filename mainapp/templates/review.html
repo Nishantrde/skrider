@@ -31,13 +31,21 @@
             {% block button %}
 
             {% endblock %}
-            
+
         </div>
         {% endfor %}
     </div>
 </section>
 
 <script src="{% static 'js/review.js' %}"></script>
+<script>
+function confirmDelete() {
+    return confirm('Are you sure you want to delete this photo?');
+}
+</script>
+{% block red %}
 
+{% endblock %}
+<a href="/">Go to Home</a>
 </body>
 {% endblock %}

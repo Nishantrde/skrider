@@ -16,6 +16,7 @@ def galery(request):
         if request.POST.get("galery"):
             content = str(request.POST.get("galery"))
             photos = Galery.objects.filter(category = content)
+            
             return render(request, "galery.html", {"photos":photos, 'title' : photos[0].category})
     
 def reviews(request):
@@ -61,7 +62,7 @@ def admin_control(request):
                 ifrm = obj1[0].iframe
             else:
                 des = ""
-                ifrm = obj1[0].iframe
+                ifrm = ""
             obj = Galery(title = admin_title, category = admin_title, image = admin_image, description = des, iframe = ifrm)
             print(obj)
             obj.save()
@@ -88,6 +89,17 @@ def admin_control(request):
             review = Reviews.objects.all()
             return render(request, "ctr_review.html", {"reviews" : review})
 
+        if request.POST.get("ctr_photo"):
+                content = str(request.POST.get("galery"))
+                photos = Galery.objects.filter(category = content)  
+                return render(request, "ctr_galery.html", {"photos":photos, 'title' : photos[0].category})
+
+        if request.POST.get("del_photo"):
+                Galery.objects.filter(id = int(request.POST.get("del_photo"))).delete()
+                content = str(request.POST.get("galery"))
+                photos = Galery.objects.filter(category = content)
+                return render(request, "ctr_galery.html", {"photos":photos, 'title' : photos[0].category})
+
         if request.POST.get("del_revs"):
             obj = Reviews.objects.all().delete()        
 
@@ -101,4 +113,3 @@ def admin_control(request):
         email = obj.email
         phn = obj.phone_number
     return render(request, "admin_control.html", {"photos": photos, "name":name, "email":email, "phn":phn})
-
