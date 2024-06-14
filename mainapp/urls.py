@@ -8,6 +8,7 @@ urlpatterns = [path("", index),
                path("review", reviews),
                path("share_reviews", share_reviews, name = "reviews" ),
                path("cp120", admin_control),
+               path("login", login_page)
               ]
 
 
