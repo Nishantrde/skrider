@@ -23,11 +23,10 @@
         <div class="destination">
             <img src="{{photo.image.url}}">
             {% block button %}
-            <form action="cp120" method="post" onsubmit="return confirmDelete()">
+            <form action="cp120" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="galery" value="{{ photo.category }}">
                 <input type="hidden" name="del_photo" value="{{ photo.id }}">
-                <button type="submit" class="see-more">Delete</button>
             </form>
             {% endblock %}
         </div>
