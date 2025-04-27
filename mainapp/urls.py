@@ -10,5 +10,5 @@ urlpatterns = [path("", index),
                path("cp120", admin_control),
                path("login", login_page)
               ]
-
+ 
 
